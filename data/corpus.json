@@ -1,0 +1,123 @@
+[
+  {
+    "id": "doc_01",
+    "title": "GPU Hardware Warranty & Acoustic Coil Whine Policy",
+    "category": "warranty",
+    "text": "TechGear Solutions offers a comprehensive 36-month manufacturer warranty on flagship graphics cards including the SKU-NV-4090 series. While physical defects and thermal throttling exceeding 95 degrees Celsius are covered for replacement, audible high-frequency noise classified under GPU-coil-77 is deemed normal electrical acoustic behavior unless oscillation exceeds 45 decibels under standardized full load benchmarking. Customers experiencing severe noise may request secondary acoustic testing within 30 days of invoice date."
+  },
+  {
+    "id": "doc_02",
+    "title": "Dead On Arrival (DOA) Hardware Policy",
+    "category": "warranty",
+    "text": "Products identified as non-functional straight out of the box are subject to our priority DOA-48HR expedited claim procedure. Customers must report non-operational hardware within 48 hours of carrier drop-off to receive an automatic pre-authorized RMA-TG-88 return classification. Once the intake scan confirms the parcel is en route, a replacement unit is dispatched via overnight air prior to receiving the returned defective component."
+  },
+  {
+    "id": "doc_03",
+    "title": "Monitor Display Pixel Defect Warranty Coverage",
+    "category": "warranty",
+    "text": "All flat-panel display and gaming monitor warranty evaluations adhere strictly to the PIXEL-ISO-9241 specification for Class II displays. Replacement or panel servicing will be authorized only when a screen exhibits three or more fully stuck bright sub-pixels, or five or more dark dead sub-pixels within the primary viewing zone. Minor edge backlight bleed and micro-glow visible solely in totally darkened environments are within certified factory tolerances."
+  },
+  {
+    "id": "doc_04",
+    "title": "Power Supply Unit (PSU) Extended Coverage & Surge Protection",
+    "category": "warranty",
+    "text": "TechGear premium modular power supply units carry a 10-year limited manufacturer warranty against circuit component failure. If an internal power failure or catastrophic shutdown manifests with fault log code ERR-PSU-904, the unit is entitled to immediate factory replacement upon verification of certified surge protector deployment. Claims resulting from non-compliant third-party cable braiding or continuous unauthorized mining load over 80 percent rated capacity are excluded."
+  },
+  {
+    "id": "doc_05",
+    "title": "Standard Consumer Return Window & Restocking Terms",
+    "category": "return",
+    "text": "Non-defective retail computer hardware and peripherals may be returned within 30 calendar days from the delivery confirmation date for a full refund minus shipping fees. Opened items in pristine, fully functional condition with complete retail packaging and serial labels intact incur a standard 15% restocking deduction to cover intake re-certification. Items showing physical scratches, missing bundled manuals, or altered serial tags will be declined and returned to sender."
+  },
+  {
+    "id": "doc_06",
+    "title": "RMA Return Merchandise Authorization Protocol",
+    "category": "return",
+    "text": "Every physical product return or warranty exchange requires an official RMA-TG-88 authorization token generated through the customer support portal. Returned parcels shipped without an active RMA number displayed prominently on the exterior shipping container will be rejected by our receiving warehouse. Once an RMA ticket is activated, the provided prepaid postage label remains valid for precisely 14 calendar days before automatic expiration."
+  },
+  {
+    "id": "doc_07",
+    "title": "High-Power GaN Charger Safety Recall & Exchange",
+    "category": "return",
+    "text": "TechGear has initiated a proactive replacement advisory for the CHG-PD-140W rapid charging adapter manufactured between January and March 2025 due to potential thermal overheating under peak 140W continuous drawing conditions. Affected owners are eligible for a no-cost exchange for the revised hardware revision or an unconditional 100% store credit voucher within 60 days of notice. Please discontinue utilizing the charging unit immediately and initiate the exchange online."
+  },
+  {
+    "id": "doc_08",
+    "title": "Custom Built PC & BTO System Return Policy",
+    "category": "return",
+    "text": "Build-to-Order (BTO) custom desktop computers and workstations undergo a specialized return protocol due to custom assembly craftsmanship. The non-refundable assembly and stress-testing labor fee of $150 is deducted from all return disbursements, though individual modular components remain returnable within 14 days of receipt. Defective sub-components identified during the first 30 days are hot-swapped free of charge under our zero-downtime assembly pledge."
+  },
+  {
+    "id": "doc_09",
+    "title": "Domestic Freight & Overnight Air Courier Guidelines",
+    "category": "shipping",
+    "text": "All express domestic shipments qualify for Priority Overnight Air dispatch if the purchase transaction is finalized before the daily order cutoff timestamp of 3:00 PM EST on business days. Orders placed following the afternoon cutoff window or over holiday weekends queue for carrier pickup on the successive regular operating morning. We partner with primary commercial carriers providing continuous real-time parcel telemetry and transit route updates."
+  },
+  {
+    "id": "doc_10",
+    "title": "Hazardous Materials & Lithium-Ion Battery Transport",
+    "category": "shipping",
+    "text": "Consignments containing oversized external power banks, laptop lithium packs, or uninterrupted power supplies conform to dangerous goods compliance standard UN3481. Due to international air freight and civil aviation safety limits, high-capacity lithium battery assemblies cannot travel via passenger air aircraft and must ship exclusively via specialized ground surface transport. Delivery transit intervals for surface-restricted battery shipments generally require 4 to 8 business days."
+  },
+  {
+    "id": "doc_11",
+    "title": "International Freight, Customs Clearance & Tariffs",
+    "category": "shipping",
+    "text": "Cross-border export shipments outside North America are dispatched under Delivered Duty Paid (DDP) Incoterms whenever regional destination customs permits. Standard customs clearance inspections at international entry ports typically demand between 3 to 7 business days, subject to regulatory declaration verification and tariff processing. TechGear pre-calculates and collects applicable VAT, import excise, and local customs duties directly during store checkout."
+  },
+  {
+    "id": "doc_12",
+    "title": "High-Value Signature Delivery & Transit Damage Reporting",
+    "category": "shipping",
+    "text": "To prevent porch piracy and delivery fraud, any equipment consignment exceeding a $500 total valuation requires an adult physical signature upon courier handoff. If a recipient notices severe exterior carton crushing, puncture punctures, or opened tamper-evident security tape, damage must be documented with photographic evidence and logged within 24 hours of arrival. Refusing delivery on severely compromised parcels guarantees accelerated claim investigation and component reshipment."
+  },
+  {
+    "id": "doc_13",
+    "title": "Motherboard BIOS Flash Recovery Procedure",
+    "category": "troubleshooting",
+    "text": "When encountering a boot failure or corrupted firmware state on motherboards, the system initiates recovery code BIOS-FL-202. Users should prepare a FAT32-formatted USB 2.0 thumb drive containing the official uncompressed firmware binary renamed to TG_BIOS.ROM inserted into the dedicated rear flashback port. Depress the physical microswitch for three consecutive seconds until the LED pulse rhythm stabilizes, allowing roughly six minutes for firmware rewriting."
+  },
+  {
+    "id": "doc_14",
+    "title": "High-Performance GPU Acoustic & Power Fluctuation Diagnostics",
+    "category": "troubleshooting",
+    "text": "Users investigating intermittent coil resonance or high-pitch inductor vibration classified as GPU-coil-77 should verify that discrete 8-pin or 12VHPWR cables are not chained via split pigtails from a single rail. Ensuring balanced rail distribution and capping frame rates to monitor refresh limits significantly dampens harmonic vibration in high-draw gaming workloads. Additionally, updating motherboard PCIe spread-spectrum settings in firmware frequently attenuates audible electromagnetic resonance."
+  },
+  {
+    "id": "doc_15",
+    "title": "Enterprise Storage Array RAID Rebuild Diagnostics",
+    "category": "troubleshooting",
+    "text": "Storage array controller alerts indicating code RAID-rebuild-05 denote an automatic background parity synchronization following a physical drive swap or unrecoverable sector occurrence. IT administrators must ensure dedicated hot-spares remain online and avoid scheduling aggressive I/O indexing jobs while the array rebuild progress is active. Rebuilding arrays operate in a degraded redundancy state where write caching is suspended to avoid catastrophic parity corruption."
+  },
+  {
+    "id": "doc_16",
+    "title": "PSU Protection Tripping & OCP/OVP Error Resolution",
+    "category": "troubleshooting",
+    "text": "When a digital workstation shuts down abruptly under heavy computational transient spikes accompanied by diagnostic error ERR-PSU-904, the Over-Current Protection (OCP) or Over-Voltage circuit has triggered. The internal circuit breaker mandates a compulsory 15-minute cool-down interval with the physical AC power rocker switched off to allow high-voltage electrolytic capacitors to completely discharge. Inspect for loose 12V-2x6 connectors before re-energizing the machine."
+  },
+  {
+    "id": "doc_17",
+    "title": "Tier-1 Enterprise Mission-Critical SLA Response Guarantee",
+    "category": "enterprise_sla",
+    "text": "Enterprise clients enrolled in our premier SLA-TIER-1 corporate support agreement receive 24/7/365 priority access to dedicated Level 3 systems engineers. In the event of catastrophic server infrastructure halt, on-site field engineering dispatch with replacement parts is guaranteed within 4 hours for metropolitan service areas. This tier maintains an audited contract availability commitment targeting 99.999% production uptime throughout the fiscal billing cycle."
+  },
+  {
+    "id": "doc_18",
+    "title": "Tier-2 Business Hours Dedicated Support Protocol",
+    "category": "enterprise_sla",
+    "text": "Organizations covered under SLA-TIER-2 receive continuous support across standard business hours defined as 8:00 AM to 5:00 PM local time, Monday through Friday. Initial technical diagnostic response from an assigned specialist is delivered within two hours of incident submission via ticket or hotline. Component hardware replacements under Tier 2 are dispatched using Next Business Day priority courier logistics."
+  },
+  {
+    "id": "doc_19",
+    "title": "Enterprise Spare Parts Depot & Cold Spare Provisioning",
+    "category": "enterprise_sla",
+    "text": "To support continuous business continuity and low MTTR goals, enterprise customers can lease dedicated cold spare hardware held in regional TechGear warehousing depots. Critical replacement modules including motherboards, RAID controllers, and redundant hot-swap power supplies are staged pre-configured for instant deployment. Metropolitan emergency courier dispatch delivers critical depot parts directly to subscriber data centers in under 2 hours."
+  },
+  {
+    "id": "doc_20",
+    "title": "Mission-Critical Server Uptime Penalties & Credit Reimbursement",
+    "category": "enterprise_sla",
+    "text": "If TechGear managed infrastructure falls below contracted availability thresholds, corporate subscribers are entitled to structured fiscal service credits. For unplanned outages exceeding 30 aggregate minutes in a calendar month, clients receive a 10% monthly contract credit, escalating to 25% for outages exceeding two hours. Formal credit reimbursement requests must be submitted through the account manager within 30 days of the recorded incident."
+  }
+]
+

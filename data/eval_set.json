@@ -1,0 +1,83 @@
+[
+  {
+    "q": "What should I do if my storage array starts showing RAID-rebuild-05?",
+    "relevant": ["doc_15"]
+  },
+  {
+    "q": "How do I recover my motherboard when encountering error code BIOS-FL-202?",
+    "relevant": ["doc_13"]
+  },
+  {
+    "q": "What is the procedure and warranty coverage for ERR-PSU-904 power failures?",
+    "relevant": ["doc_04", "doc_16"]
+  },
+  {
+    "q": "Is electrical high-frequency noise covered under GPU-coil-77 guidelines?",
+    "relevant": ["doc_01", "doc_14"]
+  },
+  {
+    "q": "What are my replacement or credit options for the recalled CHG-PD-140W adapter?",
+    "relevant": ["doc_07"]
+  },
+  {
+    "q": "What on-site response time is guaranteed under the SLA-TIER-1 corporate agreement?",
+    "relevant": ["doc_17"]
+  },
+  {
+    "q": "How long is my RMA-TG-88 return shipping label valid before expiring?",
+    "relevant": ["doc_06", "doc_02"]
+  },
+  {
+    "q": "What is the deadline to report damaged equipment under DOA-48HR?",
+    "relevant": ["doc_02"]
+  },
+  {
+    "q": "How many dead or stuck pixels are required to get a panel replacement under PIXEL-ISO-9241?",
+    "relevant": ["doc_03"]
+  },
+  {
+    "q": "What is the manufacturer warranty duration on SKU-NV-4090 graphics cards?",
+    "relevant": ["doc_01"]
+  },
+  {
+    "q": "Can I return an opened graphics card after two weeks if I changed my mind?",
+    "relevant": ["doc_05"]
+  },
+  {
+    "q": "What should I do if a valuable shipment arrives with crushed packaging or broken seals?",
+    "relevant": ["doc_12"]
+  },
+  {
+    "q": "Are high-capacity lithium battery packs allowed to be transported on airplanes?",
+    "relevant": ["doc_10"]
+  },
+  {
+    "q": "Can I get a refund on the assembly fee if I decide to return a custom desktop?",
+    "relevant": ["doc_08"]
+  },
+  {
+    "q": "What is the daily cutoff time to qualify for priority overnight shipping?",
+    "relevant": ["doc_09"]
+  },
+  {
+    "q": "How many business days does international export customs inspection take?",
+    "relevant": ["doc_11"]
+  },
+  {
+    "q": "What coverage and turnaround times do standard business-hour enterprise support plans offer?",
+    "relevant": ["doc_18"]
+  },
+  {
+    "q": "How quickly can emergency replacement components arrive at our data center from the parts warehouse?",
+    "relevant": ["doc_19"]
+  },
+  {
+    "q": "What percentage of fee credit can our company claim if server outages exceed our SLA uptime target?",
+    "relevant": ["doc_20"]
+  },
+  {
+    "q": "How long must power supplies sit turned off to let internal capacitors discharge after an unexpected shutdown?",
+    "relevant": ["doc_16"]
+  }
+]
+

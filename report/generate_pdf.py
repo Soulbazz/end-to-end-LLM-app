@@ -1,4 +1,4 @@
-"""Generate the 5-to-6 page academic PDF report at report/Capstone_Project_Report.pdf."""
+"""Generate the 5-to-6 page academic PDF report at report/Project_Report.pdf."""
 
 from pathlib import Path
 from reportlab.lib import colors
@@ -20,7 +20,7 @@ from reportlab.platypus import (
 from reportlab.graphics.shapes import Drawing, Line, Polygon, Rect, String
 
 REPORT_DIR = Path(__file__).resolve().parent
-PDF_PATH = REPORT_DIR / "Capstone_Project_Report.pdf"
+PDF_PATH = REPORT_DIR / "Project_Report.pdf"
 
 NAVY = colors.HexColor("#1e293b")
 ACCENT = colors.HexColor("#1d4ed8")
@@ -51,8 +51,8 @@ def draw_header_footer(canvas, doc):
     if doc.page > 1:
         canvas.setFont("Helvetica-Oblique", 8.5)
         canvas.setFillColor(MUTED)
-        canvas.drawString(0.75 * inch, h - 0.5 * inch, "TechGear Solutions: Hybrid RAG & Guarded Text-to-SQL Agentic Assistant")
-        canvas.drawRightString(w - 0.75 * inch, h - 0.5 * inch, "67070255 · Capstone Project Report")
+        canvas.drawString(0.75 * inch, h - 0.5 * inch, "Building LLM-Powered Applications — Course Project Report: TechGear Assistant")
+        canvas.drawRightString(w - 0.75 * inch, h - 0.5 * inch, "67070255 · Course Project Report")
         canvas.setStrokeColor(BORDER)
         canvas.setLineWidth(0.5)
         canvas.line(0.75 * inch, h - 0.55 * inch, w - 0.75 * inch, h - 0.55 * inch)
@@ -62,7 +62,7 @@ def draw_header_footer(canvas, doc):
     canvas.line(0.75 * inch, 0.6 * inch, w - 0.75 * inch, 0.6 * inch)
     canvas.setFont("Helvetica", 8.5)
     canvas.setFillColor(MUTED)
-    canvas.drawString(0.75 * inch, 0.42 * inch, "Building LLM-Powered Applications — Q2 Capstone Report")
+    canvas.drawString(0.75 * inch, 0.42 * inch, "Building LLM-Powered Applications — Q2 Course Project Report")
     canvas.drawRightString(w - 0.75 * inch, 0.42 * inch, f"Page {doc.page}")
     canvas.restoreState()
 
@@ -224,16 +224,16 @@ def generate_pdf() -> int:
         rightMargin=0.72 * inch,
         topMargin=0.72 * inch,
         bottomMargin=0.72 * inch,
-        title="TechGear Solutions: Hybrid RAG & Guarded Text-to-SQL Agentic Assistant",
+        title="Building LLM-Powered Applications — Course Project Report: TechGear IT Store & Warranty Assistant",
         author="Student 67070255",
     )
     st = build_styles()
     story = []
 
     # ==================== PAGE 1: TITLE + SECTION 1 ====================
-    story.append(Paragraph("TechGear Solutions: Hybrid RAG &amp; Guarded Text-to-SQL Agentic Assistant", st["Title"]))
+    story.append(Paragraph("Building LLM-Powered Applications &mdash; Course Project Report:<br/>TechGear IT Store &amp; Warranty Assistant", st["Title"]))
     story.append(Paragraph(
-        "<b>Course:</b> Building LLM-Powered Applications (Capstone Deliverable Q2) &nbsp;|&nbsp; "
+        "<b>Course:</b> Building LLM-Powered Applications (Course Project Deliverable Q2) &nbsp;|&nbsp; "
         "<b>Student ID:</b> 67070255 &nbsp;|&nbsp; <b>Model:</b> <font name='Courier'>gemma-4-E4B-it</font> (temperature=0)",
         st["Subtitle"]
     ))

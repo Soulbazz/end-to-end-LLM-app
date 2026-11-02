@@ -1,6 +1,6 @@
-# TechGear Solutions: Hybrid RAG & Guarded Text-to-SQL Agentic Assistant
+# Building LLM-Powered Applications — Course Project Report: TechGear IT Store & Warranty Assistant
 
-**Course:** Building LLM-Powered Applications (Capstone Project Deliverable Q2)  
+**Course:** Building LLM-Powered Applications (Course Project Deliverable Q2)  
 **Student ID:** 67070255  
 **Model Backend:** `gemma-4-E4B-it` (`temperature=0`) via OpenAI-compatible API + Deterministic Offline Router  
 **Repository:** `end-to-end-LLM-app`
@@ -25,12 +25,12 @@ TechGear Solutions is a mid-sized electronics and enterprise IT hardware retaile
 - **Store & Regional Operations Managers:** Need real-time inventory counts, warranty durations, and regional revenue aggregations (e.g., comparing total revenue across `North` vs. `South` regions) without manually writing SQL queries.
 - **Self-Service Customers:** Need accurate policy guidance on return windows, restocking fees, and BTO custom desktop assembly fees.
 
-### 1.3 Why Standard LLMs and Naive Vector-Only RAG Fail
-A standalone LLM or a naive single-retriever RAG pipeline fails on this workload for four concrete reasons:
-1. **Hallucinated Quantitative Aggregations:** Standard LLMs cannot compute exact sums or live inventory counts over tabular rows (`SUM(revenue) GROUP BY region`), Either guessing plausible-sounding numbers or refusing to answer.
-2. **Dense Embedding Blindness on Rare Alphanumeric Identifiers:** Dense vector models compress text into smooth semantic representations and frequently fail to distinguish or match arbitrary alphanumeric tokens like `ERR-PSU-904` or `BIOS-FL-202` when a query consists solely of the error code.
-3. **Lexical Fragility on Colloquial Paraphrases:** Conversely, pure keyword search (BM25) fails when users ask colloquial questions that share zero content words with formal policy titles (e.g., asking *"Our systems were down for hours, what credit money do we get back?"* when `doc_20` uses *"unplanned outages"* and *"structured fiscal service credits"*).
-4. **Unnecessary Tool Invocations & Unverified Citations:** Naive pipelines run retrieval on every turn—even on simple greetings like *"Hello!"*—wasting latency and tokens, and often let the LLM fabricate document IDs not present in retrieved context.
+### 1.3 Why Plain LLM Chat or Single-Retriever RAG Falls Short
+A standalone LLM or a single-retriever RAG pipeline fails on this workload for four concrete reasons:
+1. **Hallucinated Quantitative Sums & Counts:** Plain LLMs cannot compute exact sums or live inventory counts over tabular rows (`SUM(revenue) GROUP BY region`), either guessing plausible-sounding numbers or refusing to answer.
+2. **Dense Embedding Blindness on Rare Alphanumeric Identifiers:** Dense vector models compress text into smooth semantic representations and fail to match arbitrary alphanumeric tokens like `ERR-PSU-904` or `BIOS-FL-202` when a query consists solely of the error code.
+3. **Lexical Fragility on Colloquial Paraphrases:** Conversely, pure keyword search (BM25) fails when users ask colloquial questions that share few or no content words with formal policy titles (e.g., asking *"By what hour must I pay to get my order shipped tonight?"* when `doc_09` uses *"daily order cutoff timestamp of 3:00 PM EST"*).
+4. **Unnecessary Retrieval on Greetings & Unverified Citations:** Naive pipelines run retrieval on every turn—even on simple greetings like *"Hello!"*—wasting latency and tokens, and often let the LLM fabricate document IDs not present in retrieved context.
 
 ---
 
@@ -94,14 +94,14 @@ A standalone LLM or a naive single-retriever RAG pipeline fails on this workload
 +-----------------------------------------------------------------------------------+
 ```
 
-### 2.2 Mapping to the 6 Course Capability Families (Lectures 1–14)
+### 2.2 Course Techniques Used & Design Rationale (Lectures 1–14)
 
-| Capability Family | Implementation Module | Why This Technique Was Chosen |
+| Course Technique | Implementation Module | Why This Technique Was Chosen |
 | :--- | :--- | :--- |
 | **1. Structured Output & Validation** (Lectures 4–5) | `src/agent.py` (`StructuredAgentResponse`, `_finalize`) | Enforces a strict Pydantic contract (`answer`, `citations`, `tools_used`, `confidence`). Code-level verification strips any hallucinated citation not present in the actual tool trace and auto-attaches `sql:<table>` tags when SQL queries execute. |
 | **2. Hybrid RAG with Citations** (Lectures 6–8) | `src/retriever.py` (`search_bm25`, `search_vector`, `rrf`, `search_hybrid`) | Combines BM25 (exact match on codes like `ERR-PSU-904` via hyphen-aware tokenization) with semantic vector similarity via Reciprocal Rank Fusion ($k=60$). Eliminates score-scale calibration issues between unbounded BM25 scores and $[0,1]$ cosine similarities. |
 | **3. Quantitative Retrieval Evaluation** (Lecture 8) | `eval/run_eval.py`, `data/eval_set.json`, `eval/results.md` | Benchmarks Vector-only, BM25-only, and Hybrid RRF across 20 labeled queries using `Recall@3`, `Recall@5`, and `MRR` to prove empirically that Hybrid RRF outperforms single-retriever baselines. |
-| **4. Tool-Calling Agent Loop** (Lectures 10–11) | `src/agent.py` (`TOOLS_SPEC`, `_llm_agent`, `_offline_agent`) | Implements an `Observe -> Think -> Act` loop at `temperature=0` with orthogonal tool descriptions. Prevents infinite loops via `max_steps=5`, consecutive duplicate call detection (`last_sig`), and defensive `json.JSONDecodeError` recovery. |
+| **4. Native Tool-Calling Agent Loop** (Lectures 10–11) | `src/agent.py` (`TOOLS_SPEC`, `_llm_agent`, `_offline_agent`) | Implements an `Observe -> Think -> Act` loop at `temperature=0` with orthogonal tool descriptions. Prevents infinite loops via `max_steps=5`, consecutive duplicate call detection (`last_sig`), and defensive `json.JSONDecodeError` recovery. |
 | **5. Guarded Text-to-SQL** (Lecture 11) | `src/sql_tool.py` (`is_safe_select`, `clean_sql`, `ensure_limit`, `execute_guarded_sql`) | Implements defense-in-depth: strips markdown fences, blocks comments (`--`, `/*`), blocks stacked semicolons, enforces `^\s*SELECT\b`, bans 15 destructive SQL verbs on word boundaries, appends `LIMIT 50`, and opens SQLite with `file:...?mode=ro`. |
 | **6. Served FastAPI Web Application** (Lectures 13–14) | `src/app.py` (`GET /`, `POST /api/chat`, `GET /api/eval`, `GET /api/health`) | Serves a zero-build single-page dark UI displaying confidence/tool/citation badges, an expandable step-by-step execution trace, live evaluation metrics, and 6 one-click demo presets. |
 
@@ -185,7 +185,7 @@ Running `python eval/run_eval.py` across all 20 benchmark queries yields the fol
   - `BM25-only`: `['doc_07', 'doc_08', 'doc_03', 'doc_05', 'doc_09']` (`RR = 0.00`)
   - `Hybrid RRF`: `['doc_05', 'doc_15', 'doc_08', 'doc_11', 'doc_13']` (`RR = 0.00`)
 - **Root Cause Analysis:**  
-  `doc_12` describes this scenario using formal logistics terminology: *"equipment consignment"*, *"severe exterior carton crushing"*, *"puncture"*, and *"opened tamper-evident security tape"*. The user query uses colloquial phrasing: *"package"*, *"smashed up"*, and *"seal was cut"*. Neither BM25 nor our lightweight stem/trigram vectorizer maps *"package"* $\leftrightarrow$ *"consignment/carton"*, *"smashed"* $\leftrightarrow$ *"crushing"*, or *"seal"* $\leftrightarrow$ *"tamper-evident tape"*. Because `doc_12` does not appear in the top-20 of either base ranker with competitive rank, Reciprocal Rank Fusion cannot recover it.
+  `doc_12` describes this scenario using formal logistics terminology: *"equipment consignment"*, *"severe exterior carton crushing"*, *"puncture"*, and *"opened tamper-evident security tape"*. The user query uses colloquial phrasing: *"package"*, *"smashed up"*, and *"seal was cut"*. Neither BM25 nor our lightweight stem/trigram vectorizer maps *"package"* $\leftrightarrow$ *"consignment/carton"*, *"smashed"* $\leftrightarrow$ *"crushing"*, or *"seal"* $\leftrightarrow$ *"tamper-evident tape"*. Because `doc_12` does not appear in the top-5 of either base ranker, Reciprocal Rank Fusion cannot recover it.
 - **Interesting Agent-Level Recovery vs. Raw Retriever Failure:**  
   When `Q12` is sent through the full LLM agent (`POST /api/chat` Preset 5b), `gemma-4-E4B-it` acts as an implicit query rewriter: in Step 1 it calls `search_docs(query="damaged or tampered package return policy")` and in Step 2 it calls `search_docs(query="damaged in transit hardware claim procedure")`, which *does* match *"Transit Damage"* in `doc_12` and answers accurately! However, in deterministic offline mode (which passes the raw user question directly to `search_hybrid`), the failure surfaces end-to-end.
 

@@ -1,6 +1,6 @@
 # TechGear IT Store & Warranty Agentic Assistant
 
-**67070255 – Building LLM-Powered Applications · Capstone Project**
+**67070255 – Building LLM-Powered Applications · Course Project**
 
 An end-to-end LLM application for **TechGear Solutions**, a fictional electronics & IT hardware retailer. A tool-calling agent answers customer and staff questions by combining **hybrid retrieval (BM25 + vector, RRF)** over policy/troubleshooting documents with a **guarded, read-only Text-to-SQL tool** over the store database, and returns **structured, cited answers** through a FastAPI web UI.
 

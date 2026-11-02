@@ -1,83 +1,22 @@
 [
-  {
-    "q": "What should I do if my storage array starts showing RAID-rebuild-05?",
-    "relevant": ["doc_15"]
-  },
-  {
-    "q": "How do I recover my motherboard when encountering error code BIOS-FL-202?",
-    "relevant": ["doc_13"]
-  },
-  {
-    "q": "What is the procedure and warranty coverage for ERR-PSU-904 power failures?",
-    "relevant": ["doc_04", "doc_16"]
-  },
-  {
-    "q": "Is electrical high-frequency noise covered under GPU-coil-77 guidelines?",
-    "relevant": ["doc_01", "doc_14"]
-  },
-  {
-    "q": "What are my replacement or credit options for the recalled CHG-PD-140W adapter?",
-    "relevant": ["doc_07"]
-  },
-  {
-    "q": "What on-site response time is guaranteed under the SLA-TIER-1 corporate agreement?",
-    "relevant": ["doc_17"]
-  },
-  {
-    "q": "How long is my RMA-TG-88 return shipping label valid before expiring?",
-    "relevant": ["doc_06", "doc_02"]
-  },
-  {
-    "q": "What is the deadline to report damaged equipment under DOA-48HR?",
-    "relevant": ["doc_02"]
-  },
-  {
-    "q": "How many dead or stuck pixels are required to get a panel replacement under PIXEL-ISO-9241?",
-    "relevant": ["doc_03"]
-  },
-  {
-    "q": "What is the manufacturer warranty duration on SKU-NV-4090 graphics cards?",
-    "relevant": ["doc_01"]
-  },
-  {
-    "q": "Can I return an opened graphics card after two weeks if I changed my mind?",
-    "relevant": ["doc_05"]
-  },
-  {
-    "q": "What should I do if a valuable shipment arrives with crushed packaging or broken seals?",
-    "relevant": ["doc_12"]
-  },
-  {
-    "q": "Are high-capacity lithium battery packs allowed to be transported on airplanes?",
-    "relevant": ["doc_10"]
-  },
-  {
-    "q": "Can I get a refund on the assembly fee if I decide to return a custom desktop?",
-    "relevant": ["doc_08"]
-  },
-  {
-    "q": "What is the daily cutoff time to qualify for priority overnight shipping?",
-    "relevant": ["doc_09"]
-  },
-  {
-    "q": "How many business days does international export customs inspection take?",
-    "relevant": ["doc_11"]
-  },
-  {
-    "q": "What coverage and turnaround times do standard business-hour enterprise support plans offer?",
-    "relevant": ["doc_18"]
-  },
-  {
-    "q": "How quickly can emergency replacement components arrive at our data center from the parts warehouse?",
-    "relevant": ["doc_19"]
-  },
-  {
-    "q": "What percentage of fee credit can our company claim if server outages exceed our SLA uptime target?",
-    "relevant": ["doc_20"]
-  },
-  {
-    "q": "How long must power supplies sit turned off to let internal capacitors discharge after an unexpected shutdown?",
-    "relevant": ["doc_16"]
-  }
+  {"q": "RAID-rebuild-05 alert on our array, what does it mean?", "relevant": ["doc_15"]},
+  {"q": "BIOS-FL-202 and my board will not start anymore, how do I revive it?", "relevant": ["doc_13"]},
+  {"q": "ERR-PSU-904", "relevant": ["doc_04", "doc_16"]},
+  {"q": "GPU-coil-77 noise rules", "relevant": ["doc_01", "doc_14"]},
+  {"q": "CHG-PD-140W exchange options", "relevant": ["doc_07"]},
+  {"q": "What response time does SLA-TIER-1 guarantee?", "relevant": ["doc_17"]},
+  {"q": "RMA-TG-88 label expiry", "relevant": ["doc_06", "doc_02"]},
+  {"q": "DOA-48HR: window to flag something broken right out of the box", "relevant": ["doc_02"]},
+  {"q": "PIXEL-ISO-9241 - how many bad dots on the screen before it gets replaced?", "relevant": ["doc_03"]},
+  {"q": "How many years is the SKU-NV-4090 covered for?", "relevant": ["doc_01"]},
+  {"q": "Can I send my opened graphics card back for a refund if I just changed my mind?", "relevant": ["doc_05"]},
+  {"q": "My package showed up smashed up and the seal was cut, what now?", "relevant": ["doc_12"]},
+  {"q": "Can power banks fly on a plane?", "relevant": ["doc_10"]},
+  {"q": "If I return a prebuilt gaming rig, do I get my build charge back?", "relevant": ["doc_08"]},
+  {"q": "By what hour must I pay to get my order shipped tonight?", "relevant": ["doc_09"]},
+  {"q": "How slow is getting stuff through foreign border checks?", "relevant": ["doc_11"]},
+  {"q": "We only get support during office hours, how fast do they answer?", "relevant": ["doc_18"]},
+  {"q": "How fast can spare parts get to our server room from your stockroom?", "relevant": ["doc_19", "doc_17"]},
+  {"q": "Our systems were down for hours, what credit money do we get back?", "relevant": ["doc_20"]},
+  {"q": "My computer keeps dying under heavy load, how long should I leave it unplugged?", "relevant": ["doc_16"]}
 ]
-

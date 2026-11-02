@@ -158,6 +158,8 @@ def _finalize(raw_text: str, trace: List[Dict[str, Any]], mode: str) -> Dict[str
     cites = [c for c in (data.get("citations") or []) if isinstance(c, str) and c in supported]
     if not cites:
         cites = supported
+    # SQL results are always a source when run_sql was used, even if the model forgot to cite them.
+    cites += [c for c in supported if c.startswith("sql:") and c not in cites]
     conf = data.get("confidence") if data.get("confidence") in ("high", "medium", "low") else (
         "medium" if trace else "high")
     try:
